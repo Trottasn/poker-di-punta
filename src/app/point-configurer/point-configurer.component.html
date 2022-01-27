@@ -1,0 +1,13 @@
+<form class="new-point-value-form">
+  <mat-form-field class="new-point-value-input" appearance="fill">
+    <mat-label>New Point Value</mat-label>
+    <input type="number" matInput [formControl]="pointFormControl" [errorStateMatcher]="matcher"
+           placeholder="0">
+    <mat-error *ngIf="pointFormControl.hasError('badPointValue') && !pointFormControl.hasError('required')">
+      Please enter a valid point value
+    </mat-error>
+    <mat-error *ngIf="pointFormControl.hasError('required')">
+      Valid positive integer is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+</form>

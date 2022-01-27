@@ -1,0 +1,22 @@
+@import "src/variables.scss";
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.center button {
+  align-self: center;
+}
+
+.center .delete-point-button {
+  background-color: $warn;
+  color: $white;
+  height: 50px;
+  width: 50px;
+  margin-bottom: 5px;
+}
+
+.center .point-button {
+  height: 50px;
+}

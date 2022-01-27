@@ -1,0 +1,7 @@
+// Import material theming functions
+@import '~@angular/material/theming';
+
+$app-warn:    mat-palette($mat-red);
+
+$warn: mat-color($app-warn);
+$white: white;
