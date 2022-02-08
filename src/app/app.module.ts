@@ -13,6 +13,7 @@ import { PointButtonComponent } from './point-button/point-button.component';
 import { PointPanelComponent } from './point-panel/point-panel.component';
 import { VotingZoneComponent } from './voting-zone/voting-zone.component';
 import { PointConfigurerComponent } from './point-configurer/point-configurer.component';
+import { WebsocketService } from './shared-services/websocket-service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { PointConfigurerComponent } from './point-configurer/point-configurer.co
     MatIconModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [WebsocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

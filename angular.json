@@ -32,7 +32,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/variable.scss",
+              "src/variables.scss",
               "node_modules/material-design-icons/iconfont/material-icons.css"
             ],
             "scripts": []

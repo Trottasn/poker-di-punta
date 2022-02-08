@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroupDirective, NgForm, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { WebsocketService } from '../shared-services/websocket-service';
 
 export class PointErrorStateMatcher implements ErrorStateMatcher {
 
@@ -30,5 +31,9 @@ export class PointConfigurerComponent {
   pointFormControl = new FormControl('', [Validators.required, Validators.nullValidator, validatePointValue()]);
 
   matcher = new PointErrorStateMatcher();
+
+  constructor(private websocketService: WebsocketService) {
+
+  }
 
 }
