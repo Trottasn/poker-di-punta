@@ -17,7 +17,10 @@ export class WebsocketService {
 
   public sendMessage() {
     console.log("Trying to send a message");
-    this.subject.next({message: 'some message'});
+    this.subject.next({
+      type: 'room',
+      room: 'balls'
+    });
   }
 
   public disconnect() {
