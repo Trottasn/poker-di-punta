@@ -1,0 +1,27 @@
+<form class="name-and-room-form" [formGroup]="nameAndRoomGroup" (ngSubmit)="onSubmit()">
+  <mat-grid-list [cols]="1" rowHeight="100px">
+    <mat-grid-tile [colspan]="1">
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput [formControl]="nameFormControl"
+               placeholder="Frodo">
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1">
+      <mat-form-field appearance="fill">
+        <mat-label>Room</mat-label>
+        <input type="text" matInput [formControl]="roomFormControl"
+               placeholder="Carpe">
+        <mat-error *ngIf="roomFormControl.hasError('required')">
+          Room is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1">
+      <button type="submit" [disabled]="!nameAndRoomGroup.valid" style="display:none"></button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>

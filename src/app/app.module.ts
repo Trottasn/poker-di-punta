@@ -8,12 +8,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import {MatIcon, MatIconModule} from '@angular/material/icon';
+import { MatIconModule} from '@angular/material/icon';
 import { PointButtonComponent } from './point-button/point-button.component';
 import { PointPanelComponent } from './point-panel/point-panel.component';
 import { VotingZoneComponent } from './voting-zone/voting-zone.component';
 import { PointConfigurerComponent } from './point-configurer/point-configurer.component';
 import { WebsocketService } from './shared-services/websocket-service';
+import { LandingViewComponent } from './landing-view/landing-view.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { WebsocketService } from './shared-services/websocket-service';
     PointButtonComponent,
     PointPanelComponent,
     VotingZoneComponent,
-    PointConfigurerComponent
+    PointConfigurerComponent,
+    LandingViewComponent
   ],
   imports: [
     BrowserModule,

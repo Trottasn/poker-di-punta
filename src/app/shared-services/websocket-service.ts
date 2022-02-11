@@ -23,6 +23,16 @@ export class WebsocketService {
     });
   }
 
+  public sendRoomMessage(name: string, room: string) {
+    console.log("Trying to connect to room...");
+    this.subject.next({
+      type: 'room',
+      room: room,
+      name: name
+    });
+    console.log("Message sent!");
+  }
+
   public disconnect() {
     this.subscription.unsubscribe();
   }
