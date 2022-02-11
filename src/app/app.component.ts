@@ -11,6 +11,8 @@ export class AppComponent {
 
   title = 'poker-di-punta';
 
+  inRoom: boolean = false;
+
   constructor(private websocketService: WebsocketService) {
   }
 
@@ -18,6 +20,10 @@ export class AppComponent {
   async ngOnDestroy()
   {
     this.websocketService.disconnect();
+  }
+
+  roomStateHandler(inRoom: boolean) {
+    this.inRoom = inRoom;
   }
 
 }

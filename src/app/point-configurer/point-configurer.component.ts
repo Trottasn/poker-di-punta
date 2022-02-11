@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormControl, FormGroupDirective, NgForm, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, FormGroupDirective, NgForm, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { WebsocketService } from '../shared-services/websocket-service';
 
@@ -29,11 +29,18 @@ export function validatePointValue(): ValidatorFn {
 export class PointConfigurerComponent {
 
   pointFormControl = new FormControl('', [Validators.required, Validators.nullValidator, validatePointValue()]);
-
   matcher = new PointErrorStateMatcher();
+
+  newPointGroup: FormGroup = new FormGroup({
+    point: this.pointFormControl
+  });
 
   constructor(private websocketService: WebsocketService) {
 
+  }
+
+  onSubmit() {
+    console.log("Will add point to list later");
   }
 
 }

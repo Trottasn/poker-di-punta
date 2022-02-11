@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { WebsocketService } from '../shared-services/websocket-service';
 
@@ -8,6 +8,8 @@ import { WebsocketService } from '../shared-services/websocket-service';
   styleUrls: [ './landing-view.component.scss' ],
 })
 export class LandingViewComponent {
+
+  @Output() inRoom: EventEmitter<boolean> = new EventEmitter<boolean>(false);
 
   nameFormControl: FormControl = new FormControl('', [Validators.required, Validators.nullValidator]);
   roomFormControl: FormControl = new FormControl('', [Validators.required, Validators.nullValidator]);
@@ -22,6 +24,7 @@ export class LandingViewComponent {
 
   onSubmit() {
     this.websocketService.sendRoomMessage(this.nameFormControl.value, this.roomFormControl.value);
+    this.inRoom.next(true);
   }
 
 }

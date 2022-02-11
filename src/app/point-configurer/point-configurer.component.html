@@ -1,4 +1,4 @@
-<form class="new-point-value-form">
+<form class="new-point-value-form" [formGroup]="newPointGroup" (ngSubmit)="onSubmit()">
   <mat-form-field class="new-point-value-input" appearance="fill">
     <mat-label>New Point Value</mat-label>
     <input type="number" matInput [formControl]="pointFormControl" [errorStateMatcher]="matcher"

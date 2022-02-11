@@ -1,2 +1,3 @@
-<app-landing-view></app-landing-view>
+<app-landing-view *ngIf="!inRoom" (inRoom)="roomStateHandler($event)"></app-landing-view>
+<app-voting-zone *ngIf="inRoom"></app-voting-zone>
 <router-outlet></router-outlet>
