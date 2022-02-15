@@ -15,7 +15,6 @@ export class PointButtonComponent {
 
   public voteSelected() {
     console.log("Button clicked.");
-    this.websocketService.sendMessage();
   }
 
 }

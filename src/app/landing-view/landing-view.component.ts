@@ -23,8 +23,10 @@ export class LandingViewComponent {
   }
 
   onSubmit() {
-    this.websocketService.sendRoomMessage(this.nameFormControl.value, this.roomFormControl.value);
-    this.inRoom.next(true);
+    if (this.nameAndRoomGroup.valid) {
+      this.websocketService.sendRoomMessage(this.nameFormControl.value, this.roomFormControl.value);
+      this.inRoom.next(true);
+    }
   }
 
 }

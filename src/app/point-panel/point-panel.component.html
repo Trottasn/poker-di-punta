@@ -1,5 +1,5 @@
-<mat-grid-list [ngStyle]="{'min-width': (pointValues.length * 60) + 'px' }" [cols]="pointValues.length" rowHeight="110px">
-  <mat-grid-tile *ngFor="let pointValue of pointValues" [colspan]="1">
+<mat-grid-list [ngStyle]="{'min-width': (points.length * 60) + 'px' }" [cols]="points.length" rowHeight="110px">
+  <mat-grid-tile *ngFor="let pointValue of points" [colspan]="1">
     <app-point-button class="point-button" [pointValue]="pointValue"></app-point-button>
   </mat-grid-tile>
 </mat-grid-list>

@@ -40,7 +40,9 @@ export class PointConfigurerComponent {
   }
 
   onSubmit() {
-    console.log("Will add point to list later");
+    if (this.newPointGroup.valid) {
+      this.websocketService.sendAddPointMessage(this.pointFormControl.value);
+    }
   }
 
 }
